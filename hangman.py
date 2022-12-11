@@ -8,7 +8,7 @@ def get_word(w):
         """
         inpute: w - list with string (words)
         output: for now: first element in list as string
-                TODO: random string from list
+                TOD: random string from list
         """
         return w[0]
 
@@ -24,8 +24,8 @@ def user_input():
 
 def build_template(t, w, g= ''):
         for i in range(len(w)):
-              if w[i] == g:
-                        t[t] = g
+                if w[i] == g:
+                        t[i] = g
         return t
 
 def check_win(g):
@@ -37,12 +37,12 @@ def check_win(g):
 def check_mistake(w,g):
         for i in w:
                 if i == g:
-                        return False
-        return True
+                        return True
+        
 
 def game():
         progress = True
-        word = ['orange']
+        word = ['растение']
         lifes = 3
 
         word_in_game = get_word(word)
@@ -57,8 +57,9 @@ def game():
                 progress = check_win(quessed)
 
                 if not check_mistake(word_in_game, user_quess):
-                        print(f'Осталось {lifes} попитки')
                         lifes -= 1
+                        print(f'Осталось {lifes} попытки')
+                        
                 
                 if lifes == 0:
                         print('вы проиграли')
